@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+void getElements(int arr[],int n)
+{
+    int largest=arr[0];
+    for(int i=1;i<n;i++){
+        if(arr[i]>largest){
+            largest=arr[i];
+        }
+
+    }
+    cout<<"largest:"<<largest<<endl;
+
+    int slargest=-1;
+    for(int i=0;i<n;i++)
+    {
+       if(arr[i]>slargest && arr[i]!=largest){
+         slargest=arr[i];
+       }
+    }
+    cout<<"Second largest is "<<slargest<<endl;
+}
+int main()
+{
+    int arr[]={1,2,4,6,7,5};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    getElements(arr,n);
+    return 0;
+}
