@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+void getElements(int arr[],int n)
+{
+    if(n==0 || n==1)
+        cout<<-1<<endl;  
+    sort(arr,arr+n);
+    int ssmall=arr[1];
+    int slarge=arr[n-2];
+    int large=arr[n-1];
+
+    for(int i=slarge;i>=0;i--)
+    {
+        if(arr[i]!=large){
+            slarge=arr[i];
+            break;
+        }
+    }
+    cout<<"Second smallest is "<<ssmall<<endl;
+    cout<<"Second largest is "<<slarge<<endl;
+}
+int main()
+{
+    int arr[]={1,2,4,6,7,5};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    getElements(arr,n);
+    return 0;
+}
